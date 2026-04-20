@@ -1,1 +1,1534 @@
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="상위권 국어 과외 · 0.1% 생기부 관리 — SKY·의치한 합격을 설계하는 초개인화 입시 전략.">
+<title>국어 × 생기부 전략 | 0.1% 입시 설계</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Noto+Serif+KR:wght@300;400;600;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   RESET
+════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+
+/* ════════════════════════════════════════
+   CSS VARIABLES
+════════════════════════════════════════ */
+:root{
+  --azalea:#D4537A;
+  --hana:#F9EEE8;
+  --hwangsa:#C4A882;
+  --ssuk:#7A8C5E;
+  --hanji:#F0E6D0;
+  --cheong:#8BC5E8;
+  --hwangto:#B5773A;
+  --magnolia:#F5E6D8;
+  --rain:#A8BECC;
+  --cheongmae:#7BAF8A;
+  --yuchae:#F2C94C;
+  --ink:#1A1510;
+  --sakura:#F7BCD4;
+  --sakura-light:#FDE8F0;
+  --sakura-deep:#E8829A;
+  --azalea2:#D4547A;
+  --spring-green:#8FBC6A;
+  --lilac:#B89DCE;
+  --sky:#87CEEB;
+  --sky-b:#8BC5E8;
+  --blue:#3B8FD9;
+  --deep-blue:#1A4FA0;
+  --dark-blue:#0d2252;
+  --navy:#091A42;
+  --white:#ffffff;
+  --off-white:#fafcff;
+  --silk:#f5f9ff;
+  --apple-white:#fbfbfd;
+  --apple-gray:#f5f5f7;
+  --crimson:#DC143C;
+  --rose-gold:#E8B4A0;
+  --sapphire:#0F1B3C;
+  --burgundy:#B22222;
+  --dark-red:#8B0000;
+  --platinum:#F7F7F7;
+  --serif:'Cormorant Garamond','Noto Serif KR',Georgia,serif;
+  --sans:'Noto Sans KR',-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --ease-apple:cubic-bezier(0.28,0.11,0.32,1);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --ease-in-out:cubic-bezier(0.65,0,0.35,1);
+}
+
+/* ════════════════════════════════════════
+   BASE
+════════════════════════════════════════ */
+body{
+  font-family:var(--sans);
+  background:var(--apple-white);
+  color:var(--sapphire);
+  line-height:1.7;
+  font-weight:300;
+  letter-spacing:-0.022em;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  cursor:none;
+  overflow-x:hidden;
+}
+
+/* ════════════════════════════════════════
+   GRAIN OVERLAY
+════════════════════════════════════════ */
+#grain{
+  position:fixed;inset:0;z-index:9998;pointer-events:none;
+  opacity:0.018;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:300px 300px;
+  animation:grainAnim 0.3s steps(1) infinite;
+}
+@keyframes grainAnim{
+  0%{background-position:0 0}
+  25%{background-position:-50px 30px}
+  50%{background-position:30px -50px}
+  75%{background-position:60px 60px}
+  100%{background-position:-30px -30px}
+}
+
+/* ════════════════════════════════════════
+   GRADIENT MESH — 3 blobs
+════════════════════════════════════════ */
+#mesh{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+}
+.blob{
+  position:absolute;border-radius:50%;filter:blur(140px);
+}
+.blob-1{
+  width:800px;height:800px;
+  background:radial-gradient(circle at center,rgba(139,197,232,0.16) 0%,transparent 70%);
+  top:-300px;left:-200px;
+  animation:drift1 22s ease-in-out infinite alternate;
+}
+.blob-2{
+  width:650px;height:650px;
+  background:radial-gradient(circle at center,rgba(247,188,212,0.14) 0%,transparent 70%);
+  bottom:-200px;right:-150px;
+  animation:drift2 18s ease-in-out infinite alternate;
+}
+.blob-3{
+  width:550px;height:550px;
+  background:radial-gradient(circle at center,rgba(143,188,106,0.10) 0%,transparent 70%);
+  top:40%;left:55%;
+  animation:drift3 20s ease-in-out infinite alternate;
+}
+@keyframes drift1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(80px,60px) scale(1.15)}}
+@keyframes drift2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-60px,-80px) scale(1.1)}}
+@keyframes drift3{0%{transform:translate(-50%,-50%) scale(1)}100%{transform:translate(calc(-50% + 40px),calc(-50% - 40px)) scale(0.9)}}
+
+/* ════════════════════════════════════════
+   CURSOR — dual layer
+════════════════════════════════════════ */
+#cur-dot{
+  position:fixed;width:8px;height:8px;border-radius:50%;
+  background:var(--crimson);z-index:99999;pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:transform 0.15s var(--ease-apple),background 0.3s,width 0.3s,height 0.3s;
+  mix-blend-mode:multiply;
+}
+#cur-ring{
+  position:fixed;width:38px;height:38px;border-radius:50%;
+  border:1.5px solid rgba(220,20,60,0.35);z-index:99998;pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:width 0.4s var(--ease-apple),height 0.4s var(--ease-apple),
+             border-color 0.4s,opacity 0.4s;
+}
+.cursor-expand #cur-dot{width:12px;height:12px;background:var(--sapphire)}
+.cursor-expand #cur-ring{width:64px;height:64px;border-color:rgba(15,27,60,0.4)}
+
+/* ════════════════════════════════════════
+   LOADER — cinematic
+════════════════════════════════════════ */
+#loader{
+  position:fixed;inset:0;z-index:100000;
+  background:var(--navy);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+#loader::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 60% at 30% 40%,rgba(59,143,217,0.12),transparent),
+             radial-gradient(ellipse 50% 50% at 75% 65%,rgba(247,188,212,0.08),transparent);
+  pointer-events:none;
+}
+#loader::after{
+  content:'';position:absolute;inset:0;opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  animation:grainAnim 0.3s steps(1) infinite;
+  pointer-events:none;
+}
+.loader-z{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.ld-eyebrow{overflow:hidden;margin-bottom:12px;}
+.ld-eyebrow-inner{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.3em;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);
+  transform:translateY(100%);
+  animation:slideUp 0.7s var(--ease-apple) 0.3s forwards;
+}
+.ld-title-wrap{overflow:hidden;margin-bottom:8px}
+.ld-title{
+  font-family:var(--serif);font-size:clamp(32px,5vw,60px);
+  font-weight:300;color:var(--white);letter-spacing:-0.03em;
+  transform:translateY(100%);
+  animation:slideUp 0.9s var(--ease-apple) 0.55s forwards;
+}
+.ld-title em{font-style:italic;color:var(--sakura)}
+.ld-sub-wrap{overflow:hidden;margin-bottom:40px}
+.ld-sub{
+  font-family:var(--serif);font-size:clamp(14px,1.5vw,18px);
+  font-weight:300;color:rgba(255,255,255,0.35);letter-spacing:-0.01em;
+  transform:translateY(100%);
+  animation:slideUp 0.8s var(--ease-apple) 0.75s forwards;
+}
+.ld-bar-track{
+  width:260px;height:1px;
+  background:rgba(255,255,255,0.1);
+  overflow:visible;position:relative;margin-bottom:14px;
+}
+.ld-bar-fill{
+  height:1px;width:0;
+  background:linear-gradient(90deg,var(--blue),var(--sakura),var(--spring-green));
+  box-shadow:0 0 8px rgba(247,188,212,0.6);
+  animation:fillBar 2.6s var(--ease-out) 1s forwards;
+  position:relative;
+}
+.ld-bar-fill::after{
+  content:'';position:absolute;right:-1px;top:-2px;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--sakura);
+  box-shadow:0 0 8px 2px rgba(247,188,212,0.8);
+}
+.ld-count{
+  font-family:var(--mono);font-size:11px;
+  color:rgba(255,255,255,0.25);letter-spacing:0.15em;
+}
+#loader.hide{
+  animation:loaderExit 0.9s var(--ease-apple) forwards;
+}
+@keyframes loaderExit{
+  0%{transform:translateY(0);opacity:1}
+  100%{transform:translateY(-100%);opacity:0}
+}
+@keyframes slideUp{from{transform:translateY(110%)}to{transform:translateY(0)}}
+@keyframes fillBar{from{width:0}to{width:100%}}
+
+/* ════════════════════════════════════════
+   NAV — 52px, blur
+════════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;height:52px;z-index:9000;
+  background:rgba(251,251,253,0.72);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(16px,4vw,52px);
+  transition:background 0.4s var(--ease-apple),box-shadow 0.4s var(--ease-apple);
+}
+nav.scrolled{
+  background:rgba(251,251,253,0.94);
+  box-shadow:0 1px 20px rgba(0,0,0,0.07);
+}
+.n-logo{
+  font-family:var(--serif);font-size:17px;font-weight:700;
+  color:var(--sapphire);text-decoration:none;letter-spacing:-0.03em;
+}
+.n-logo b{color:var(--crimson);font-weight:700}
+.n-links{display:flex;gap:clamp(16px,2.5vw,28px);list-style:none}
+.n-links a{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--sapphire);text-decoration:none;opacity:0.5;
+  transition:opacity 0.3s;position:relative;
+}
+.n-links a::after{
+  content:'';position:absolute;left:0;bottom:-2px;
+  width:0;height:1px;background:var(--crimson);
+  transition:width 0.35s var(--ease-apple);
+}
+.n-links a:hover{opacity:1}
+.n-links a:hover::after{width:100%}
+.n-btn{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  padding:7px 18px;border-radius:980px;
+  background:var(--crimson);color:white;text-decoration:none;
+  transition:all 0.3s var(--ease-apple);
+}
+.n-btn:hover{background:var(--dark-red);transform:translateY(-1px)}
+
+/* ════════════════════════════════════════
+   TICKER
+════════════════════════════════════════ */
+.ticker-outer{
+  background:var(--navy);overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  position:relative;
+}
+.ticker-outer::before,.ticker-outer::after{
+  content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
+}
+.ticker-outer::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
+.ticker-outer::after{right:0;background:linear-gradient(-90deg,var(--navy),transparent)}
+.ticker-track{
+  display:flex;align-items:center;
+  width:max-content;
+  padding:11px 0;
+  animation:tickerRoll 40s linear infinite;
+  will-change:transform;
+}
+.ticker-track:hover{animation-play-state:paused}
+.t-item{
+  white-space:nowrap;padding:0 32px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+}
+.t-item strong{color:var(--sakura);font-weight:500}
+.t-sep{color:rgba(255,255,255,0.12);font-size:14px;padding:0 4px}
+@keyframes tickerRoll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero-section{
+  min-height:100vh;padding-top:52px;
+  display:grid;place-items:center;
+  position:relative;z-index:1;overflow:hidden;
+}
+.hero-inner{
+  width:100%;max-width:1100px;
+  padding:clamp(60px,10vh,120px) clamp(20px,5vw,80px) clamp(40px,6vh,80px);
+}
+.h-eye{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--sans);font-size:11px;letter-spacing:0.08em;
+  color:var(--blue);margin-bottom:28px;
+  opacity:0;animation:fadeUp 0.7s var(--ease-apple) 0.2s forwards;
+}
+.h-eye::before{content:'';width:24px;height:1px;background:currentColor;flex-shrink:0}
+.h1{
+  font-family:var(--sans);
+  font-size:clamp(42px,8vw,110px);
+  font-weight:700;letter-spacing:-0.03em;line-height:0.95;
+  color:var(--sapphire);margin-bottom:36px;
+  opacity:0;animation:fadeUp 1s var(--ease-apple) 0.4s forwards;
+}
+.h1 em{font-style:italic;font-weight:300;color:var(--crimson)}
+.h1 .ghost{
+  -webkit-text-stroke:1.5px var(--sapphire);
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.h1 .sakura{color:var(--sakura-deep)}
+.h-sub{
+  font-family:var(--sans);font-size:clamp(15px,1.8vw,20px);
+  font-weight:300;color:rgba(15,27,60,0.6);
+  max-width:640px;line-height:1.75;letter-spacing:-0.01em;
+  margin-bottom:44px;
+  opacity:0;animation:fadeUp 0.8s var(--ease-apple) 0.6s forwards;
+}
+.h-sub strong{color:var(--sapphire);font-weight:600}
+.h-btns{
+  display:flex;flex-wrap:wrap;gap:12px;
+  opacity:0;animation:fadeUp 0.8s var(--ease-apple) 0.8s forwards;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 30px;border-radius:980px;
+  font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:none;border:none;
+  position:relative;overflow:hidden;
+  transition:transform 0.35s var(--ease-apple),box-shadow 0.35s var(--ease-apple),background 0.3s;
+}
+.btn::before{
+  content:'';position:absolute;top:0;left:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);
+  transition:left 0.5s var(--ease-apple);
+}
+.btn:hover::before{left:100%}
+.btn:hover{transform:translateY(-2px)}
+.btn-navy{background:var(--sapphire);color:white;box-shadow:0 6px 20px rgba(15,27,60,0.22)}
+.btn-navy:hover{box-shadow:0 12px 36px rgba(15,27,60,0.32)}
+.btn-red{background:var(--crimson);color:white;box-shadow:0 6px 20px rgba(220,20,60,0.22)}
+.btn-red:hover{box-shadow:0 12px 36px rgba(220,20,60,0.32)}
+.btn-ghost{
+  background:transparent;color:var(--sapphire);
+  border:1.5px solid rgba(15,27,60,0.18);
+}
+.btn-ghost:hover{background:var(--sapphire);color:white}
+.btn-sakura{
+  background:linear-gradient(135deg,var(--sakura-deep),var(--azalea2));
+  color:white;box-shadow:0 6px 20px rgba(232,130,154,0.3);
+}
+.btn-sakura:hover{box-shadow:0 12px 36px rgba(232,130,154,0.45)}
+.arr{opacity:0.5;transition:transform 0.3s,opacity 0.3s}
+.btn:hover .arr{transform:translateX(4px);opacity:1}
+.h-stats{
+  display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,52px);
+  margin-top:56px;padding-top:36px;
+  border-top:1px solid rgba(15,27,60,0.08);
+  opacity:0;animation:fadeUp 0.8s var(--ease-apple) 1s forwards;
+}
+.h-stat-n{
+  font-family:var(--sans);font-size:clamp(28px,4vw,52px);
+  font-weight:700;line-height:1;letter-spacing:-0.03em;
+}
+.h-stat-n span{color:var(--crimson)}
+.h-stat-l{
+  font-family:var(--sans);font-size:10px;letter-spacing:0.04em;
+  color:rgba(15,27,60,0.38);margin-top:5px;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ════════════════════════════════════════
+   SECTION LABELS / TITLES
+════════════════════════════════════════ */
+.s-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.s-label::before{content:'';width:18px;height:1px;background:currentColor;flex-shrink:0}
+.lc-blue{color:var(--blue)}
+.lc-sakura{color:var(--sakura-deep)}
+.lc-green{color:var(--cheongmae)}
+.lc-lilac{color:var(--lilac)}
+.lc-red{color:var(--crimson)}
+.s-h2{
+  font-family:var(--serif);
+  font-size:clamp(36px,6vw,80px);
+  font-weight:300;letter-spacing:-0.04em;line-height:1.05;
+  color:var(--sapphire);margin-bottom:18px;
+}
+.s-h2 em{font-style:italic;color:var(--crimson)}
+.s-h2 .sak{color:var(--sakura-deep)}
+.s-h2-white{color:white}
+.s-h2-white em{color:var(--sakura)}
+.s-lead{
+  font-family:var(--serif);font-size:clamp(15px,1.8vw,20px);
+  font-weight:300;color:rgba(15,27,60,0.5);
+  max-width:640px;line-height:1.75;letter-spacing:-0.01em;
+  margin-bottom:clamp(40px,6vw,72px);
+}
+.s-lead-white{color:rgba(255,255,255,0.45)}
+
+/* ════════════════════════════════════════
+   REVEAL — IntersectionObserver
+════════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.75s var(--ease-apple),transform 0.75s var(--ease-apple)}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:0.1s}.rv.d2{transition-delay:0.2s}
+.rv.d3{transition-delay:0.3s}.rv.d4{transition-delay:0.4s}
+
+/* ════════════════════════════════════════
+   SPA SECTIONS
+════════════════════════════════════════ */
+.fp-section{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(80px,10vh,120px) clamp(20px,5vw,80px);
+  position:relative;z-index:1;overflow:hidden;
+}
+.fp-section.dark{
+  background:linear-gradient(160deg,var(--navy) 0%,var(--dark-blue) 55%,#0a1730 100%);
+}
+.fp-inner{
+  width:100%;max-width:1100px;margin:0 auto;
+}
+
+/* ════════════════════════════════════════
+   STATS BAND
+════════════════════════════════════════ */
+.stats-band{
+  background:var(--sapphire);
+  padding:clamp(48px,7vh,80px) clamp(20px,5vw,80px);
+  position:relative;overflow:hidden;
+}
+.stats-band::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 80% at 10% 50%,rgba(59,143,217,0.13),transparent),
+    radial-gradient(ellipse 40% 60% at 90% 50%,rgba(247,188,212,0.10),transparent);
+}
+.stats-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-around;gap:32px;
+  position:relative;z-index:1;
+}
+.s-stat{text-align:center}
+.s-num{
+  font-family:var(--serif);
+  font-size:clamp(40px,6vw,72px);
+  font-weight:700;letter-spacing:-0.04em;line-height:1;
+  color:white;display:block;
+}
+.s-num .accent{color:var(--sakura)}
+.s-lbl{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.18em;
+  text-transform:uppercase;color:rgba(255,255,255,0.32);
+  margin-top:8px;
+}
+.s-lbl strong{color:rgba(255,255,255,0.65);font-weight:500}
+.s-vline{width:1px;height:60px;background:rgba(255,255,255,0.08)}
+@media(max-width:600px){.s-vline{display:none}}
+
+/* ════════════════════════════════════════
+   GLASS CARDS
+════════════════════════════════════════ */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:18px;
+}
+.g-card{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);
+  border:1px solid rgba(255,255,255,0.85);
+  border-radius:22px;
+  padding:clamp(28px,3.5vw,48px);
+  box-shadow:0 4px 24px rgba(15,27,60,0.06),inset 0 1px 0 rgba(255,255,255,0.95);
+  position:relative;overflow:hidden;cursor:none;
+  will-change:transform;
+  transition:box-shadow 0.4s var(--ease-apple);
+}
+.g-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+}
+.g-card.c1::before{background:linear-gradient(90deg,var(--blue),var(--sky-b),transparent)}
+.g-card.c2::before{background:linear-gradient(90deg,var(--sakura-deep),var(--sakura),transparent)}
+.g-card.c3::before{background:linear-gradient(90deg,var(--cheongmae),var(--spring-green),transparent)}
+.g-card.c4::before{background:linear-gradient(90deg,var(--lilac),var(--azalea),transparent)}
+.g-card::after{
+  content:'';position:absolute;top:-60%;left:-60%;
+  width:220%;height:220%;
+  background:radial-gradient(circle at center,rgba(255,255,255,0.12) 0%,transparent 60%);
+  opacity:0;transition:opacity 0.4s;pointer-events:none;
+}
+.g-card:hover::after{opacity:1}
+.g-card:hover{box-shadow:0 20px 60px rgba(15,27,60,0.14)}
+.c-num{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.22em;
+  text-transform:uppercase;opacity:0.45;margin-bottom:16px;
+}
+.c-title{
+  font-family:var(--serif);font-size:clamp(20px,2.2vw,27px);
+  font-weight:600;letter-spacing:-0.02em;line-height:1.25;
+  color:var(--sapphire);margin-bottom:14px;
+}
+.c-body{font-size:14.5px;color:rgba(15,27,60,0.6);line-height:1.8;margin-bottom:20px}
+.c-body strong{color:var(--crimson);font-weight:600}
+.c-body .bb{color:var(--blue);font-weight:600}
+.c-body .bg{color:var(--ssuk);font-weight:600}
+.c-kw{
+  font-family:var(--serif);font-size:clamp(32px,4vw,48px);
+  font-weight:700;letter-spacing:-0.04em;line-height:1;
+  background:linear-gradient(135deg,var(--sapphire),var(--blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:16px;
+}
+.c-tags{
+  display:flex;flex-wrap:wrap;gap:7px;
+  padding-top:16px;border-top:1px solid rgba(15,27,60,0.07);
+}
+.c-tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;
+  padding:4px 11px;border-radius:980px;
+  border:1px solid rgba(15,27,60,0.1);color:rgba(15,27,60,0.45);
+}
+
+/* ════════════════════════════════════════
+   STRATEGY — DARK SECTION
+════════════════════════════════════════ */
+.fp-section.dark::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 40% 60% at 12% 25%,rgba(59,143,217,0.12),transparent),
+    radial-gradient(ellipse 50% 40% at 88% 75%,rgba(143,188,106,0.08),transparent),
+    radial-gradient(ellipse 30% 50% at 55% 50%,rgba(247,188,212,0.06),transparent);
+}
+.strat-list{list-style:none;width:100%}
+.strat-row{
+  display:grid;grid-template-columns:100px 1fr;gap:clamp(20px,4vw,52px);
+  padding:clamp(22px,3vw,36px) 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  border-radius:12px;
+  cursor:none;
+  transition:padding-left 0.4s var(--ease-apple),background 0.4s var(--ease-apple);
+}
+.strat-row:hover{
+  padding-left:14px;
+  background:rgba(59,143,217,0.06);
+}
+.sr-num{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--cheongmae);padding-top:3px;white-space:nowrap;
+}
+.sr-title{
+  font-family:var(--serif);
+  font-size:clamp(19px,2.3vw,28px);
+  font-weight:600;letter-spacing:-0.03em;color:white;
+  margin-bottom:9px;line-height:1.3;
+}
+.sr-title em{font-style:normal;color:var(--sakura)}
+.sr-desc{font-size:14.5px;color:rgba(255,255,255,0.45);line-height:1.8}
+.sr-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.sr-tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:980px;
+  border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.28);
+}
+@media(max-width:600px){
+  .strat-row{grid-template-columns:1fr;gap:10px}
+}
+
+/* ════════════════════════════════════════
+   REFORM GRID
+════════════════════════════════════════ */
+.reform-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;
+}
+.r-card{
+  border-radius:18px;padding:clamp(24px,3vw,40px);
+  border:1px solid rgba(15,27,60,0.08);background:var(--white);
+  cursor:none;
+  transition:transform 0.4s var(--ease-apple),box-shadow 0.4s var(--ease-apple);
+}
+.r-card:hover{transform:translateY(-6px);box-shadow:0 14px 44px rgba(15,27,60,0.09)}
+.r-card.ra{background:linear-gradient(135deg,rgba(220,20,60,0.03),rgba(178,34,34,0.03));border-color:rgba(220,20,60,0.1)}
+.r-card.rb{background:linear-gradient(135deg,rgba(59,143,217,0.04),rgba(26,79,160,0.03));border-color:rgba(59,143,217,0.12)}
+.r-card.rc{background:linear-gradient(135deg,rgba(143,188,106,0.04),rgba(90,140,94,0.03));border-color:rgba(143,188,106,0.15)}
+.r-card.rd{background:linear-gradient(135deg,rgba(184,157,206,0.05),rgba(180,133,213,0.03));border-color:rgba(184,157,206,0.18)}
+.r-card.re{background:linear-gradient(135deg,rgba(242,201,76,0.04),rgba(181,119,58,0.03));border-color:rgba(242,201,76,0.18)}
+.r-pill{
+  display:inline-block;padding:4px 12px;border-radius:980px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.ra .r-pill{background:rgba(220,20,60,0.07);color:var(--crimson);border:1px solid rgba(220,20,60,0.14)}
+.rb .r-pill{background:rgba(59,143,217,0.07);color:var(--blue);border:1px solid rgba(59,143,217,0.18)}
+.rc .r-pill{background:rgba(143,188,106,0.08);color:var(--ssuk);border:1px solid rgba(143,188,106,0.2)}
+.rd .r-pill{background:rgba(184,157,206,0.08);color:var(--lilac);border:1px solid rgba(184,157,206,0.22)}
+.re .r-pill{background:rgba(242,201,76,0.08);color:#8B6000;border:1px solid rgba(242,201,76,0.22)}
+.r-title{
+  font-family:var(--serif);font-size:clamp(18px,2vw,23px);
+  font-weight:700;letter-spacing:-0.02em;line-height:1.3;
+  color:var(--sapphire);margin-bottom:10px;
+}
+.r-body{font-size:14px;color:rgba(15,27,60,0.58);line-height:1.8}
+.r-body strong{color:var(--crimson);font-weight:700}
+.r-body .bb{color:var(--blue);font-weight:600}
+.r-body .bg{color:var(--ssuk);font-weight:600}
+.r-body .bp{color:var(--lilac);font-weight:600}
+.r-body .by{color:#8B6000;font-weight:600}
+.chip{
+  display:inline-block;background:rgba(15,27,60,0.04);
+  border:1px solid rgba(15,27,60,0.1);
+  padding:2px 7px;border-radius:4px;
+  font-family:var(--mono);font-size:10px;color:rgba(15,27,60,0.45);
+}
+
+/* ════════════════════════════════════════
+   AI CHAT SECTION (from file 1)
+════════════════════════════════════════ */
+.chat-section{
+  padding:clamp(80px,10vh,120px) clamp(20px,5vw,80px);
+  position:relative;z-index:1;
+  background:var(--apple-gray);
+}
+.chat-outer{
+  max-width:860px;margin:0 auto;
+  background:var(--white);
+  border:1px solid rgba(15,27,60,0.07);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 8px 40px rgba(15,27,60,0.07);
+}
+.chat-topbar{
+  padding:14px 20px;
+  background:var(--sapphire);
+  display:flex;align-items:center;gap:10px;
+}
+.chat-topbar-title{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.7);
+}
+.chat-live-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--sakura-deep);
+  box-shadow:0 0 8px var(--sakura);
+  animation:pulseAnim 2s ease-in-out infinite;
+  margin-left:auto;
+}
+@keyframes pulseAnim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+
+.chat-msgs-wrap{
+  padding:20px;
+  max-height:380px;overflow-y:auto;
+  display:flex;flex-direction:column;gap:12px;
+}
+.chat-msgs-wrap::-webkit-scrollbar{width:3px}
+.chat-msgs-wrap::-webkit-scrollbar-thumb{background:rgba(15,27,60,0.12);border-radius:2px}
+
+.chat-bubble{
+  padding:12px 16px;border-radius:14px;
+  font-size:14px;line-height:1.75;font-weight:300;
+  max-width:85%;
+}
+.chat-bubble.ai{
+  background:var(--silk);
+  border:1px solid rgba(15,27,60,0.07);
+  color:var(--sapphire);
+  align-self:flex-start;
+  border-bottom-left-radius:4px;
+}
+.chat-bubble.user{
+  background:linear-gradient(135deg,var(--sapphire),var(--deep-blue));
+  color:white;font-weight:400;
+  align-self:flex-end;
+  border-bottom-right-radius:4px;
+}
+.chat-thinking{display:flex;align-items:center;gap:4px;padding:4px 0}
+.chat-thinking span{width:5px;height:5px;border-radius:50%;background:rgba(15,27,60,0.25);animation:think .9s ease-in-out infinite}
+.chat-thinking span:nth-child(2){animation-delay:.15s}
+.chat-thinking span:nth-child(3){animation-delay:.3s}
+@keyframes think{0%,100%{opacity:.2}50%{opacity:1;transform:translateY(-2px)}}
+
+.chat-pills{
+  padding:12px 20px 8px;
+  display:flex;flex-wrap:wrap;gap:6px;
+  border-top:1px solid rgba(15,27,60,0.05);
+}
+.chat-pill{
+  background:var(--silk);border:1px solid rgba(15,27,60,0.09);
+  border-radius:980px;padding:5px 14px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.06em;
+  color:rgba(15,27,60,0.5);cursor:none;
+  transition:all .2s var(--ease-apple);
+}
+.chat-pill:hover{border-color:rgba(15,27,60,0.2);color:var(--sapphire);background:white}
+
+.chat-input-wrap{
+  padding:8px 14px 14px;
+  display:flex;align-items:flex-end;gap:8px;
+}
+.chat-textarea{
+  flex:1;background:var(--silk);
+  border:1.5px solid rgba(15,27,60,0.09);
+  border-radius:12px;padding:10px 14px;
+  font-family:var(--sans);font-size:14px;
+  color:var(--sapphire);
+  outline:none;resize:none;
+  transition:border-color .2s;
+  min-height:44px;max-height:120px;
+  line-height:1.5;
+}
+.chat-textarea::placeholder{color:rgba(15,27,60,0.3)}
+.chat-textarea:focus{border-color:rgba(15,27,60,0.22)}
+.chat-send{
+  background:var(--sapphire);color:white;
+  border:none;border-radius:10px;
+  width:40px;height:40px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  cursor:none;font-size:16px;
+  transition:all .2s var(--ease-apple);
+}
+.chat-send:hover:not(:disabled){background:var(--dark-blue);transform:translateY(-1px)}
+.chat-send:disabled{opacity:.3;cursor:not-allowed}
+.chat-error{
+  margin:0 14px 8px;
+  background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.15);
+  border-radius:8px;padding:8px 12px;
+  font-size:12px;color:var(--crimson);font-family:var(--mono);
+}
+
+/* ════════════════════════════════════════
+   NARRATIVE SPLIT
+════════════════════════════════════════ */
+.narrative-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(40px,6vw,80px);align-items:center;
+}
+@media(max-width:860px){.narrative-grid{grid-template-columns:1fr}}
+.narr-cards{display:flex;flex-direction:column;gap:14px}
+.n-card{
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+  border:1px solid rgba(255,255,255,0.95);border-radius:16px;
+  padding:24px 28px;
+  box-shadow:0 3px 18px rgba(15,27,60,0.05),inset 0 1px 0 rgba(255,255,255,1);
+}
+.n-card.featured{
+  background:linear-gradient(135deg,var(--sapphire),var(--dark-blue));
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 10px 40px rgba(15,27,60,0.28);
+}
+.n-card.offset{transform:translateX(28px)}
+@media(max-width:860px){.n-card.offset{transform:none}}
+.n-card-tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.featured .n-card-tag{color:var(--sakura)}
+.n-card-ttl{
+  font-family:var(--serif);font-size:18px;font-weight:600;
+  letter-spacing:-0.02em;color:var(--sapphire);margin-bottom:7px;
+}
+.featured .n-card-ttl{color:white}
+.n-card-body{font-size:13.5px;color:rgba(15,27,60,0.52);line-height:1.7}
+.featured .n-card-body{color:rgba(255,255,255,0.45)}
+
+/* ════════════════════════════════════════
+   TESTIMONIAL
+════════════════════════════════════════ */
+.testi-band{
+  background:var(--silk);
+  border-top:1px solid rgba(15,27,60,0.06);
+  border-bottom:1px solid rgba(15,27,60,0.06);
+  padding:clamp(56px,8vh,96px) clamp(20px,5vw,80px);
+}
+.testi-inner{max-width:860px;margin:0 auto;text-align:center}
+.testi-q{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(20px,3.2vw,38px);font-weight:300;
+  letter-spacing:-0.02em;line-height:1.5;color:var(--sapphire);
+  margin-bottom:28px;
+}
+.testi-q strong{font-style:normal;font-weight:700;color:var(--crimson)}
+.testi-src{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(15,27,60,0.3)}
+.testi-dots{display:flex;justify-content:center;gap:7px;margin-top:24px}
+.td{width:5px;height:5px;border-radius:50%;background:rgba(15,27,60,0.12);cursor:none;transition:background 0.3s,transform 0.3s;}
+.td.on{background:var(--crimson);transform:scale(1.4)}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer{
+  background:var(--sapphire);
+  padding:clamp(64px,8vh,96px) clamp(20px,5vw,80px);
+  position:relative;overflow:hidden;
+}
+footer::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 70% at 5% 90%,rgba(59,143,217,0.08),transparent),
+    radial-gradient(ellipse 40% 60% at 95% 10%,rgba(247,188,212,0.07),transparent);
+}
+.foot-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.foot-top{
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+  margin-bottom:60px;
+}
+@media(max-width:640px){.foot-top{grid-template-columns:1fr}}
+.foot-hl{
+  font-family:var(--serif);font-size:clamp(28px,5vw,60px);
+  font-weight:300;letter-spacing:-0.04em;line-height:1.1;color:white;
+}
+.foot-hl em{font-style:italic;color:var(--sakura)}
+.foot-btns{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+@media(max-width:640px){.foot-btns{align-items:flex-start}}
+.btn-f1{background:var(--crimson);color:white;font-size:10px;box-shadow:0 4px 18px rgba(220,20,60,0.28)}
+.btn-f1:hover{background:var(--dark-red)}
+.btn-f2{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);font-size:10px}
+.btn-f2:hover{background:rgba(255,255,255,0.12);color:white}
+.foot-div{height:1px;background:rgba(255,255,255,0.07);margin-bottom:36px}
+.foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.foot-logo{font-family:var(--serif);font-size:18px;font-weight:700;color:white;letter-spacing:-0.03em}
+.foot-logo b{color:var(--sakura)}
+.foot-links{display:flex;flex-wrap:wrap;gap:22px;list-style:none}
+.foot-links a{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.3s;
+}
+.foot-links a:hover{color:rgba(255,255,255,0.7)}
+.foot-copy{font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;color:rgba(255,255,255,0.18);line-height:1.8}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:768px){
+  .n-links{display:none}
+  .card-grid{grid-template-columns:1fr}
+  .reform-grid{grid-template-columns:1fr}
+  /* 모바일: 커서 관련 요소 숨김 */
+  #cur-dot,#cur-ring{display:none!important}
+  body{cursor:auto}
+  .btn,.g-card,.r-card,.strat-row,.chat-pill,.chat-send,.td{cursor:pointer}
+}
+</style>
+</head>
+<body>
+
+<!-- GRAIN -->
+<div id="grain" aria-hidden="true"></div>
+
+<!-- GRADIENT MESH -->
+<div id="mesh" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- ════ LOADER ════ -->
+<div id="loader" role="status" aria-live="polite">
+  <div class="loader-z">
+    <div class="ld-eyebrow"><div class="ld-eyebrow-inner">입시 전략 · 0.1% 생기부 관리</div></div>
+    <div class="ld-title-wrap"><div class="ld-title">국어 × 생기부<br><em>전략 설계</em></div></div>
+    <div class="ld-sub-wrap"><div class="ld-sub">SKY · 의치한수 합격을 설계합니다</div></div>
+    <div class="ld-bar-track"><div class="ld-bar-fill" id="ldrBar"></div></div>
+    <div class="ld-count" id="ldrCount">0%</div>
+  </div>
+</div>
+
+<!-- ════ NAV ════ -->
+<nav id="mainNav">
+  <a href="#" class="n-logo">국어<b>×</b>생기부 전략</a>
+  <ul class="n-links">
+    <li><a href="#battle">입시 전쟁</a></li>
+    <li><a href="#weapons">5가지 무기</a></li>
+    <li><a href="#success">합격 실적</a></li>
+    <li><a href="#programs">프로그램</a></li>
+    <li><a href="#strategy">전략 로드맵</a></li>
+    <li><a href="#ai">AI 상담</a></li>
+  </ul>
+  <a href="tel:010-8318-1700" class="n-btn">📞 전화 상담</a>
+</nav>
+
+<!-- ════ TICKER ════ -->
+<div class="ticker-outer" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="t-item"><strong>합격률 100%</strong> 20년간 단 한 명의 예외 없음<span class="t-sep">·</span></span>
+    <span class="t-item">광교 입시 <strong>대치동·분당 20년 경력</strong><span class="t-sep">·</span></span>
+    <span class="t-item"><strong>수원 권선고</strong> 최초 서울대 법학과 합격<span class="t-sep">·</span></span>
+    <span class="t-item">연세대 의대 합격생 <strong>다수 배출</strong><span class="t-sep">·</span></span>
+    <span class="t-item"><strong>0.1%</strong> 생기부 컨설팅<span class="t-sep">·</span></span>
+    <span class="t-item">국어 <strong>수능 1등급</strong> 달성 전략<span class="t-sep">·</span></span>
+    <span class="t-item">모의고사 상위 <strong>3% 진입</strong> 시스템<span class="t-sep">·</span></span>
+    <span class="t-item">SKY · 의치한수 <strong>합격 설계</strong><span class="t-sep">·</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="t-item"><strong>합격률 100%</strong> 20년간 단 한 명의 예외 없음<span class="t-sep">·</span></span>
+    <span class="t-item">광교 입시 <strong>대치동·분당 20년 경력</strong><span class="t-sep">·</span></span>
+    <span class="t-item"><strong>수원 권선고</strong> 최초 서울대 법학과 합격<span class="t-sep">·</span></span>
+    <span class="t-item">연세대 의대 합격생 <strong>다수 배출</strong><span class="t-sep">·</span></span>
+    <span class="t-item"><strong>0.1%</strong> 생기부 컨설팅<span class="t-sep">·</span></span>
+    <span class="t-item">국어 <strong>수능 1등급</strong> 달성 전략<span class="t-sep">·</span></span>
+    <span class="t-item">모의고사 상위 <strong>3% 진입</strong> 시스템<span class="t-sep">·</span></span>
+    <span class="t-item">SKY · 의치한수 <strong>합격 설계</strong><span class="t-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ════ HERO ════ -->
+<section class="hero-section" aria-labelledby="heroH1">
+  <div class="hero-inner">
+    <div class="h-eye">입시는 경쟁의 장 — 전쟁터입니다</div>
+    <h1 class="h1" id="heroH1">
+      승리를 위해<br><em>자신만의</em><br><span class="ghost">무기</span>가 필요합니다
+    </h1>
+    <p class="h-sub">
+      <strong>숙명여대 국어국문학과 졸업 · 광교 입시 · 대치동·분당 학군지역 20년 경력</strong>으로 의치한·SKY·인서울 명문대 합격률 100%.<br>
+      단 한 명의 예외도 없었던 체계적 학습 시스템을 수업 전 무료 미팅으로 먼저 확인하세요.
+    </p>
+    <div class="h-btns">
+      <a href="tel:010-8318-1700" class="btn btn-red">📞 전화 상담</a>
+      <a href="#ai" class="btn btn-ghost">AI 입시 상담 <span class="arr">→</span></a>
+    </div>
+    <div class="h-stats">
+      <div>
+        <div class="h-stat-n"><span>100</span>%</div>
+        <div class="h-stat-l">의치한·SKY·인서울 합격률</div>
+      </div>
+      <div>
+        <div class="h-stat-n"><span>20</span>년</div>
+        <div class="h-stat-l">대치동·분당·광교 지도 경력</div>
+      </div>
+      <div>
+        <div class="h-stat-n">SKY<span>·</span></div>
+        <div class="h-stat-l">의치한수 합격 설계</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ STATS BAND ════ -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="s-stat rv">
+      <span class="s-num"><span class="accent">1</span>등급</span>
+      <div class="s-lbl">국어 수능 목표<br><strong>불수능에도 흔들림 없이</strong></div>
+    </div>
+    <div class="s-vline rv d1"></div>
+    <div class="s-stat rv d1">
+      <span class="s-num" style="font-size:clamp(24px,3.5vw,48px);line-height:1.2">세특<span class="accent">×</span><br>심화</span>
+      <div class="s-lbl">전공 연계 탐구<br><strong>0.1% 독보적 기록</strong></div>
+    </div>
+    <div class="s-vline rv d2"></div>
+    <div class="s-stat rv d2">
+      <span class="s-num" style="font-size:clamp(22px,3vw,40px);line-height:1.2">미팅<br><span class="accent">무료</span></span>
+      <div class="s-lbl">수업 전 가능성 확인<br><strong>국어·전과목 석차 진단</strong></div>
+    </div>
+    <div class="s-vline rv d3"></div>
+    <div class="s-stat rv d3">
+      <span class="s-num" style="font-size:clamp(20px,2.8vw,38px);line-height:1.2">모의<br><span class="accent">2주</span></span>
+      <div class="s-lbl">모의고사 후 즉시 발급<br><strong>예상 석차·분석 자료</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ BATTLE — 입시 전쟁 ════ -->
+<div id="battle" class="fp-section">
+  <div class="fp-inner">
+    <div class="s-label lc-red rv">입시 전쟁터</div>
+    <h2 class="s-h2 rv">경쟁의 장에서<br><em>살아남는 법</em></h2>
+    <p class="s-lead rv">의대 열기가 지속되는 가운데, 취업 현장에서도 삼성전자·SK하이닉스가 반도체 이슈 속 가장 취업하고 싶은 기업으로 더욱 부상하고 있습니다. 합리적이고 전략적인 선택이 필요합니다.</p>
+    <div class="card-grid">
+      <article class="g-card c1 rv d1" data-tilt>
+        <div class="c-num">상황 · 01</div>
+        <h3 class="c-title">의대 열기 속<br>국어의 위상 변화</h3>
+        <p class="c-body">국어는 이제 단순 언어 능력을 넘어 <strong>'입시의 당락을 결정하는 가장 변별력 있는 과목'</strong>이 되었습니다. <span class="bb">수능 최저 학력 기준</span>과 정시 경쟁력 모두 국어에 달려 있습니다.</p>
+        <div class="c-kw">국어</div>
+        <div class="c-tags"><span class="c-tag">수능변별력</span><span class="c-tag">수능최저충족</span><span class="c-tag">정시경쟁력</span></div>
+      </article>
+      <article class="g-card c2 rv d2" data-tilt>
+        <div class="c-num">상황 · 02</div>
+        <h3 class="c-title">반도체 취업 열기<br>생기부의 중요성</h3>
+        <p class="c-body"><span class="bg">삼성전자·SK하이닉스</span>가 최고 취업 희망 기업으로 부상하면서, AI·반도체 융합 탐구가 담긴 <strong>차별화된 생기부</strong>가 입시와 취업 양방향에서 무기가 됩니다.</p>
+        <div class="c-kw" style="background:linear-gradient(135deg,var(--sakura-deep),var(--azalea2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">생기부</div>
+        <div class="c-tags"><span class="c-tag">반도체연계</span><span class="c-tag">세특심화</span><span class="c-tag">학종핵심</span></div>
+      </article>
+      <article class="g-card c3 rv d3" data-tilt>
+        <div class="c-num">기본 서비스 · 03</div>
+        <h3 class="c-title">모의고사 예상 석차<br>2주 선행 분석</h3>
+        <p class="c-body">모의고사 후 바로 발급하는 <strong>예상 석차 성적표·분석 자료</strong>로 일반적인 경쟁자보다 <span class="bg">2주 이상 빠르게</span> 대응 전략을 수립합니다. 이것이 가장 기본적인 학습 서비스입니다.</p>
+        <div class="c-kw" style="background:linear-gradient(135deg,var(--ssuk),var(--cheongmae));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">분석</div>
+        <div class="c-tags"><span class="c-tag">예상석차</span><span class="c-tag">2주선행</span><span class="c-tag">전략수립</span></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ════ WEAPONS — 5가지 무기 ════ -->
+<div id="weapons" class="fp-section" style="background:var(--apple-gray)">
+  <div class="fp-inner">
+    <div class="s-label lc-sakura rv">5가지 전략 무기</div>
+    <h2 class="s-h2 rv"><em>합리적이고</em><br>전략적인 선택</h2>
+    <p class="s-lead rv">상위권 국어 과외와 '0.1% 생기부 관리'라는 고관여 서비스를 통해 얻을 수 있는 결과를 정리합니다.</p>
+    <div class="reform-grid">
+      <article class="r-card ra rv">
+        <div class="r-pill">무기 01 — 입시의 키(Key)</div>
+        <h3 class="r-title">SKY · 의치한수<br>합격 확보</h3>
+        <p class="r-body"><strong>국어 때문에 발목 잡히지 않고</strong>, 오히려 국어로 다른 과목의 부족함을 메워 최상위권 대학에 안착. 불수능에서도 흔들리지 않는 <strong>1등급</strong>: 단순 문제 풀이가 아닌, 지문 구조를 꿰뚫는 '독해 메커니즘' 체득. <span class="chip">수능 최저 충족</span></p>
+      </article>
+      <article class="r-card rb rv d1">
+        <div class="r-pill">무기 02 — 학종 초격차</div>
+        <h3 class="r-title">0.1% 생기부<br>독보적 세특</h3>
+        <p class="r-body">교수님이 읽었을 때 <span class="bb">'이 학생이 찾고 있는 인재다'</span>라고 느낄 만한 독보적이고 전문적인 기록. 국어 비문학(경제·철학·과학)과 희망 전공 연계 심화 탐구 보고서로 확장. <strong>가설-탐구-결론-확장</strong>의 논리적 서사.</p>
+      </article>
+      <article class="r-card rc rv d2">
+        <div class="r-pill">무기 03 — 시간 효율</div>
+        <h3 class="r-title">학습 효율 극대화<br>수학·과학 투자 여력</h3>
+        <p class="r-body">상위권 학생에게 가장 귀한 자산은 <span class="bg">'시간'</span>입니다. 학생 약점(문학 선지 판단, 비문학 고난도 추론 등)을 정확히 진단해 가성비 높은 학습량 제안. 생기부 작성 스트레스 해소 — 전문가 가이드로 주제 선정 고민 최소화.</p>
+      </article>
+      <article class="r-card rd rv d3">
+        <div class="r-pill">무기 04 — 문해력</div>
+        <h3 class="r-title">고차원 문해력<br>논술·면접 기초 체력</h3>
+        <p class="r-body">어떤 텍스트를 만나도 당황하지 않고 핵심을 파악하며 논리적으로 서술하는 능력. 텍스트 장악력: <span class="bp">핵심 정보 추출·구조화</span>. 국어 과외로 다져진 논리력이 자연스럽게 <strong>구술 면접·논술 전형</strong>의 기초 체력으로.</p>
+      </article>
+      <article class="r-card re rv d4" style="grid-column: span 1">
+        <div class="r-pill">무기 05 — 멘탈 케어</div>
+        <h3 class="r-title">정서적 안정<br>페이스메이커</h3>
+        <p class="r-body">불안한 입시 로드맵에서 나를 이끌어줄 든든한 <span class="by">페이스메이커</span>를 갖는 것. 상위 0.1% 데이터 기반 피드백으로 막연한 불안감 해소. 국어라는 난공불락의 성을 정복하며 얻은 <strong>자신감</strong>이 타 과목 전반에 긍정적 영향.</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ════ STRATEGY (DARK) ════ -->
+<div id="strategy" class="fp-section dark">
+  <div class="fp-inner">
+    <div class="s-label lc-green rv">전략적 실행 로드맵</div>
+    <h2 class="s-h2 s-h2-white rv">입시 전쟁터에서<br><em>가장 효율적인</em> 승리</h2>
+    <p class="s-lead s-lead-white rv">단순히 '국어 점수'가 아닙니다. 견고한 수능 1등급이라는 안전망과 차별화된 생기부라는 강력한 무기를 동시에 장착하여, 합격 통지서로 직결되는 전략을 이룹니다.</p>
+    <ul class="strat-list">
+      <li class="strat-row rv">
+        <div class="sr-num">전략 01</div>
+        <div>
+          <h3 class="sr-title"><em>수업 전 미팅</em>으로 성적 상승 가능성 확인</h3>
+          <p class="sr-desc">국어 성적 및 전과목 석차 상승 가능성을 수업 전 미팅으로 먼저 확인. 맞춤형 진단 후 최적 전략 제시. 불필요한 투자 없이 가능성부터 검증.</p>
+          <div class="sr-tags"><span class="sr-tag">무료미팅</span><span class="sr-tag">맞춤진단</span></div>
+        </div>
+      </li>
+      <li class="strat-row rv">
+        <div class="sr-num">전략 02</div>
+        <div>
+          <h3 class="sr-title"><em>독해 메커니즘</em> 체득 — 구조를 꿰뚫는 읽기</h3>
+          <p class="sr-desc">단순 문제 풀이를 넘어 지문 구조를 꿰뚫는 독해 메커니즘 체득. 불수능에서도 흔들리지 않는 1등급 기반 구축.</p>
+          <div class="sr-tags"><span class="sr-tag">독해메커니즘</span><span class="sr-tag">1등급고정</span></div>
+        </div>
+      </li>
+      <li class="strat-row rv">
+        <div class="sr-num">전략 03</div>
+        <div>
+          <h3 class="sr-title"><em>비문학 제재</em>와 전공의 학문적 연계</h3>
+          <p class="sr-desc">국어 비문학(경제·철학·과학)을 희망 전공과 연결해 심화 탐구 보고서로 확장. 의문 제기-탐구-결론-확장으로 이어지는 0.1% 수준 논리적 서사 구축.</p>
+          <div class="sr-tags"><span class="sr-tag">전공연계세특</span><span class="sr-tag">심화탐구</span></div>
+        </div>
+      </li>
+      <li class="strat-row rv">
+        <div class="sr-num">전략 04</div>
+        <div>
+          <h3 class="sr-title"><em>모의고사 후 2주+</em> 빠른 예상 석차 발급</h3>
+          <p class="sr-desc">모의고사 예상 석차 성적표 및 분석 자료를 모의고사 후 바로 발급. 경쟁자보다 2주 이상 빠른 전략 대응 — 이것이 가장 기본적인 학습 서비스.</p>
+          <div class="sr-tags"><span class="sr-tag">2주선행</span><span class="sr-tag">예상석차</span></div>
+        </div>
+      </li>
+      <li class="strat-row rv">
+        <div class="sr-num">전략 05</div>
+        <div>
+          <h3 class="sr-title"><em>타겟팅 학습</em>으로 수학·과학 투자 시간 확보</h3>
+          <p class="sr-desc">학생 약점을 정확히 진단해 가성비 높은 학습량 제안. 국어 공부 시간을 줄이고 수학·과학에 투자할 여력 확보. 전략적 시간 배분.</p>
+          <div class="sr-tags"><span class="sr-tag">타겟팅학습</span><span class="sr-tag">시간효율</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════ NARRATIVE ════ -->
+<div id="narrative" class="fp-section">
+  <div class="fp-inner">
+    <div class="narrative-grid">
+      <div>
+        <div class="s-label lc-lilac rv">학업적 설계</div>
+        <h2 class="s-h2 rv">기록에서<br><em>증거</em>로</h2>
+        <p class="s-lead rv" style="margin-bottom:28px">대학 사정관은 더 이상 활동의 양을 보지 않습니다. '공부하는 기계'가 아닌 '차별화된 학문적 잠재력을 지닌 인재'로 생기부에 기록되어야 합니다.</p>
+        <p class="rv" style="font-size:14.5px;color:rgba(15,27,60,0.52);line-height:1.8;margin-bottom:36px">전문적인 관리를 통해 학생의 세특은 단순 나열식 기록이 아닌, 어떤 문제를 발견하고, 어떻게 파고들었으며, 어디까지 도달했는지 — 지적 여정의 궤적을 담게 됩니다.</p>
+        <a href="tel:010-8318-1700" class="btn btn-navy rv">📞 생기부 설계 상담</a>
+      </div>
+      <div class="narr-cards">
+        <div class="n-card featured rv">
+          <div class="n-card-tag lc-sakura">Phase 01 — 의문 제기</div>
+          <h4 class="n-card-ttl">지적 호기심의 출발점</h4>
+          <p class="n-card-body">국어 비문학에서 만난 경제학·철학·과학 개념을 희망 전공과 연결하는 첫 번째 질문. '왜?'를 묻는 순간이 0.1% 세특의 시작.</p>
+        </div>
+        <div class="n-card offset rv d1">
+          <div class="n-card-tag lc-blue">Phase 02 — 탐구 · 검증</div>
+          <h4 class="n-card-ttl">심화 탐구와 논거 구조화</h4>
+          <p class="n-card-body">단순 나열을 탈피. 가설→탐구→근거 3단 구조로 비판적 사고의 증거를 쌓아가는 과정.</p>
+        </div>
+        <div class="n-card rv d2">
+          <div class="n-card-tag lc-green">Phase 03 — 결론 · 확장</div>
+          <h4 class="n-card-ttl">수직적 탐구 궤적의 완성</h4>
+          <p class="n-card-body">'기록'이 아닌 '증거'로서의 생활기록부. 합격 통지서로 직결되는 독보적이고 전문적인 기록 완성.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SUCCESS STORIES ════ -->
+<div id="success" class="fp-section" style="background:var(--navy);position:relative;overflow:hidden">
+  <div class="fp-inner" style="position:relative;z-index:1">
+    <div class="s-label rv" style="color:var(--sakura-deep)">검증된 합격 실적</div>
+    <h2 class="s-h2 s-h2-white rv">20년간 단 한 명의<br><em>예외 없는</em> 합격</h2>
+    <p class="s-lead s-lead-white rv">모든 지도생이 과외 후 목표를 상향 조정하고 당초 목표 이상의 대학에 합격했습니다.<br>"선생님을 더 일찍 만났으면" — 가장 많이 듣는 학부모님 말씀입니다.</p>
+    <div class="card-grid" style="margin-bottom:clamp(32px,4vw,56px)">
+      <article class="g-card rv d1" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">
+        <div class="c-num" style="color:var(--sakura)">합격 사례 · 01</div>
+        <h3 class="c-title" style="color:white">수원 권선고 최초<br>서울대 법학과 합격</h3>
+        <p class="c-body" style="color:rgba(255,255,255,0.55)">1년 7개월 지도. <strong style="color:var(--sakura)">해당 학생이 받은 유일한 사교육</strong>으로 권선고 역사상 최초 서울대 법학과 합격이라는 쾌거를 이뤄냈습니다.</p>
+        <div class="c-tags"><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">서울대법학과</span><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">1년7개월</span><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">최초합격</span></div>
+      </article>
+      <article class="g-card rv d2" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">
+        <div class="c-num" style="color:var(--sakura)">합격 사례 · 02</div>
+        <h3 class="c-title" style="color:white">연세대 의대 합격생<br>다수 배출</h3>
+        <p class="c-body" style="color:rgba(255,255,255,0.55)">현재 동수원 병원 재직 의사, 테헤란로 유튜브 출연 원장님 등 <strong style="color:var(--sakura)">다수의 의대 합격생 배출</strong>. 국어를 우위 과목으로 전환한 체계적 시스템의 결과입니다.</p>
+        <div class="c-tags"><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">연세대의대</span><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">의사배출</span><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">다수합격</span></div>
+      </article>
+      <article class="g-card rv d3" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">
+        <div class="c-num" style="color:var(--sakura)">합격 실적 · 03</div>
+        <h3 class="c-title" style="color:white">합격률 100%<br>목표 상향 조정 합격</h3>
+        <p class="c-body" style="color:rgba(255,255,255,0.55)">20년간 지도한 모든 학생이 <strong style="color:var(--sakura)">의치한·SKY·인서울 명문대에 합격</strong>. 누구든 국어 하나로 명문대 합격의 문이 열린다는 것을 증명한 결과입니다.</p>
+        <div class="c-tags"><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">합격률100%</span><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">인서울</span><span class="c-tag" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)">SKY의치한</span></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PROGRAMS ════ -->
+<div id="programs" class="fp-section" style="background:var(--apple-gray)">
+  <div class="fp-inner">
+    <div class="s-label lc-blue rv">체계적인 학습 시스템</div>
+    <h2 class="s-h2 rv">20년 검증 커리큘럼으로<br><em>국어를 우위 과목으로</em></h2>
+    <p class="s-lead rv">대치동·분당 학군지역 20년간 검증된 커리큘럼으로 국어를 약점이 아닌 합격의 무기로 전환합니다.</p>
+    <div class="reform-grid">
+      <article class="r-card ra rv">
+        <div class="r-pill">Program 01</div>
+        <h3 class="r-title">내신 국어<br>1등급 시스템</h3>
+        <p class="r-body">학교별 출제 경향 분석과 맞춤형 학습으로 내신 1등급을 기본으로 만듭니다.<br><br>
+        <strong>학교별 기출 완벽 분석</strong> · 서술형 만점 전략<br>
+        <span class="bb">문학·비문학 개념 완성</span> · 주요 작품 심화 학습</p>
+      </article>
+      <article class="r-card rb rv d1">
+        <div class="r-pill">Program 02</div>
+        <h3 class="r-title">모의고사 상위<br>3% 진입</h3>
+        <p class="r-body">체계적인 독해 훈련과 유형별 접근법으로 모의고사 1등급 안정권에 진입합니다.<br><br>
+        <span class="bb">독해력 집중 향상 프로그램</span> · 유형별 문제 해결<br>
+        <strong>실전 모의고사 훈련</strong> · 오답 분석 시스템</p>
+      </article>
+      <article class="r-card rc rv d2">
+        <div class="r-pill">Program 03</div>
+        <h3 class="r-title">생기부 대치동급<br>컨설팅</h3>
+        <p class="r-body">명문대 입학사정관이 주목하는 생기부 작성법과 독서 활동 설계를 지도합니다.<br><br>
+        <span class="bg">전공 연계 독서 포트폴리오</span> · 세특 고도화 전략<br>
+        <strong>AI 활용 생기부 최적화</strong> · 학생부 종합 전형 대비</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ════ AI CHAT ════ -->
+<div id="ai" class="chat-section">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="s-label lc-blue rv" style="justify-content:center;text-align:center;display:flex">AI 입시 전문 상담</div>
+    <h2 class="s-h2 rv" style="text-align:center;margin-bottom:12px">국어 · 생기부<br><em>AI에게 질문하세요</em></h2>
+    <p class="s-lead rv" style="text-align:center;max-width:560px;margin:0 auto clamp(32px,4vw,56px)">입시 전략, 수능 국어 대비, 생기부 세특 설계까지 — 전문 AI가 실시간으로 답변합니다.</p>
+    <div class="chat-outer rv">
+      <div class="chat-topbar">
+        <div class="chat-topbar-title">입시 전략 AI · 국어·생기부 전문 분석가</div>
+        <div class="chat-live-dot"></div>
+      </div>
+      <div class="chat-msgs-wrap" id="chatMsgs">
+        <div class="chat-bubble ai">안녕하세요! 국어 × 생기부 전략 AI 상담가입니다. 🌸<br>국어 성적 향상 전략, 생기부 세특 설계, 수능 1등급 달성법, 의대·SKY 입시 전략 등 무엇이든 질문하세요.</div>
+      </div>
+      <div class="chat-pills" id="chatPills">
+        <button class="chat-pill" onclick="quickChat(this)">수능 국어 1등급 전략</button>
+        <button class="chat-pill" onclick="quickChat(this)">0.1% 생기부 세특 방법</button>
+        <button class="chat-pill" onclick="quickChat(this)">의대 입시 국어 대비법</button>
+        <button class="chat-pill" onclick="quickChat(this)">비문학 독해 메커니즘</button>
+        <button class="chat-pill" onclick="quickChat(this)">세특 전공 연계 방법</button>
+        <button class="chat-pill" onclick="quickChat(this)">삼성전자 취업 대비 생기부</button>
+      </div>
+      <div id="chatError" class="chat-error" style="display:none"></div>
+      <div class="chat-input-wrap">
+        <textarea class="chat-textarea" id="chatInput" rows="1" placeholder="국어·생기부·입시 전략에 대해 무엇이든 질문하세요…"></textarea>
+        <button class="chat-send" id="chatSend" onclick="sendChat()">↑</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ TESTIMONIAL ════ -->
+<div class="testi-band">
+  <div class="testi-inner">
+    <blockquote class="testi-q rv">
+      "입시라는 전쟁터에서 가장 효율적으로 승리하는 전략.<br>
+      <strong>견고한 수능 1등급 × 차별화된 생기부</strong>를<br>
+      동시에 장착한 학생이 합격 통지서를 받습니다."
+    </blockquote>
+    <div class="testi-src rv">국어 × 생기부 전략 — 0.1% 입시 설계 시스템</div>
+    <div class="testi-dots rv">
+      <div class="td on"></div><div class="td"></div><div class="td"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ FOOTER / CTA ════ -->
+<footer id="contact">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <h2 class="foot-hl rv">
+        30분 무료 진단 상담<br>📞 <em>010-8318-1700</em><br>전화로 연락하세요
+      </h2>
+      <div class="foot-btns rv">
+        <a href="tel:010-8318-1700" class="btn btn-f1">📞 010-8318-1700 전화 상담</a>
+      </div>
+    </div>
+    <div class="foot-div"></div>
+    <div class="foot-bot">
+      <div class="foot-logo rv">국어<b>×</b>생기부 전략</div>
+      <ul class="foot-links rv">
+        <li><a href="#battle">입시 전쟁</a></li>
+        <li><a href="#weapons">5가지 무기</a></li>
+        <li><a href="#success">합격 실적</a></li>
+        <li><a href="#programs">프로그램</a></li>
+        <li><a href="#strategy">전략 로드맵</a></li>
+        <li><a href="#ai">AI 상담</a></li>
+      </ul>
+      <p class="foot-copy rv">
+        © 2026 국어 × 생기부 입시 전략 시스템<br>
+        숙명여대 국어국문학과 졸업 · 상위권 국어 과외 · 0.1% 생기부 관리 전문
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+/* ─────────────────────────────
+   1. CINEMATIC LOADER
+───────────────────────────────*/
+(function(){
+  const loader = document.getElementById('loader');
+  const countEl = document.getElementById('ldrCount');
+  let n = 0;
+  const timer = setInterval(()=>{
+    n += Math.ceil(Math.random() * 5 + 1);
+    if(n >= 100){ n = 100; clearInterval(timer); }
+    countEl.textContent = n + '%';
+    if(n === 100){
+      setTimeout(()=>{
+        loader.classList.add('hide');
+        loader.addEventListener('animationend',()=>{ loader.style.display='none'; },{once:true});
+      }, 380);
+    }
+  }, 26);
+})();
+
+/* ─────────────────────────────
+   2. DUAL-LAYER MAGNETIC CURSOR
+───────────────────────────────*/
+(function(){
+  if('ontouchstart' in window || navigator.maxTouchPoints > 0) return; // 터치 기기 제외
+  const dot = document.getElementById('cur-dot');
+  const ring = document.getElementById('cur-ring');
+  let mx=window.innerWidth/2, my=window.innerHeight/2;
+  let rx=mx, ry=my;
+
+  document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; });
+
+  function loop(){
+    dot.style.left = mx+'px'; dot.style.top = my+'px';
+    rx += (mx-rx)*0.12;
+    ry += (my-ry)*0.12;
+    ring.style.left = rx+'px'; ring.style.top = ry+'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  const expTgts = 'a,button,.btn,.g-card,.r-card,.strat-row,.chat-pill';
+  document.querySelectorAll(expTgts).forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-expand'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-expand'));
+  });
+})();
+
+/* ─────────────────────────────
+   3. NAV SCROLL STATE
+───────────────────────────────*/
+(function(){
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', ()=>{
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+})();
+
+/* ─────────────────────────────
+   4. SCROLL REVEAL
+───────────────────────────────*/
+(function(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  },{ threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+})();
+
+/* ─────────────────────────────
+   5. 3D TILT CARDS
+───────────────────────────────*/
+(function(){
+  document.querySelectorAll('[data-tilt]').forEach(card=>{
+    card.addEventListener('mousemove', e=>{
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - 0.5;
+      const y = (e.clientY - r.top)/r.height - 0.5;
+      card.style.transform = `perspective(600px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateZ(8px)`;
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.transform = '';
+    });
+  });
+})();
+
+/* ─────────────────────────────
+   6. TEXT SCRAMBLE
+───────────────────────────────*/
+(function(){
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef가나다라마바사아자차카타파하0123456789#@!%&';
+  function scramble(el){
+    const orig = el.innerText;
+    let iter = 0;
+    const iv = setInterval(()=>{
+      let out = '';
+      for(let i=0;i<orig.length;i++){
+        if(orig[i]===' '||orig[i]==='\n'){ out+=orig[i]; continue; }
+        if(i < iter){ out+=orig[i]; }
+        else{ out+=chars[Math.floor(Math.random()*chars.length)]; }
+      }
+      el.innerText = out;
+      iter += 1.8;
+      if(iter >= orig.length){ el.innerText=orig; clearInterval(iv); }
+    }, 30);
+  }
+  document.querySelectorAll('.sr-title').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>scramble(el));
+  });
+})();
+
+/* ─────────────────────────────
+   7. SMOOTH SCROLL
+───────────────────────────────*/
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const tgt = document.querySelector(a.getAttribute('href'));
+    if(tgt){ e.preventDefault(); window.scrollTo({top:tgt.offsetTop-52,behavior:'smooth'}); }
+  });
+});
+
+/* ─────────────────────────────
+   8. AI CHAT
+   Fixed: added anthropic-dangerous-direct-browser-calls header
+───────────────────────────────*/
+const CHAT_SYSTEM = `당신은 "국어 × 생기부 입시 전략 전문 AI 상담가"입니다.
+
+[서비스 핵심]
+- 상위권 국어 과외 + 0.1% 생기부(세특) 관리 전문
+- SKY·의치한수 합격 설계
+- 수업 전 무료 미팅으로 국어 성적 및 전과목 석차 상승 가능성 확인
+- 모의고사 예상 석차 성적표·분석 자료를 모의고사 후 즉시 발급 (2주 이상 빠른 분석)
+
+[5가지 핵심 가치]
+1. 입시의 키(Key): 국어 수능 1등급 = 불수능에도 흔들림 없는 독해 메커니즘 체득
+2. 학종 초격차: 0.1% 생기부 - 교수님이 "이 학생이 찾는 인재"라고 느낄 독보적 세특
+3. 학습 효율: 약점 타겟팅 → 국어 시간 절약 → 수학/과학 투자 여력 확보
+4. 문해력·논리력: 논술·면접까지 이어지는 고차원 읽기·쓰기 능력
+5. 멘탈 케어: 0.1% 데이터 기반 피드백, 불안감 해소 페이스메이커
+
+[입시 현황 데이터 - 2026년]
+- 수능 화법작문 1등급컷: 81점 (2026년 3월 학평)
+- EBS 연계율: 53.3% (독서 4지문 전체)
+- 의대 열기 지속 + 삼성전자·SK하이닉스 취업 최선호 기업 부상
+- 세특: 단순 나열 → 가설-탐구-결론-확장 논리 서사가 핵심
+- 킬러 배제 이후 변별: 정보 밀도 + 완독 능력으로 이동
+
+한국어로 답변. 구체적이고 실용적으로. 따뜻하고 전문적인 톤. 500자 이내. 이모지 적절히 활용.`;
+
+let chatHistory = [];
+let chatBusy = false;
+
+function addChatMsg(role, text){
+  const wrap = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = 'chat-bubble ' + (role==='user'?'user':'ai');
+  div.textContent = text;
+  wrap.appendChild(div);
+  wrap.scrollTop = wrap.scrollHeight;
+  return div;
+}
+
+function addThinking(){
+  const wrap = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = 'chat-bubble ai';
+  div.innerHTML = '<div class="chat-thinking"><span></span><span></span><span></span></div>';
+  div.id = 'thinkBubble';
+  wrap.appendChild(div);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function removeThinking(){
+  const el = document.getElementById('thinkBubble');
+  if(el) el.remove();
+}
+
+async function sendChat(){
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if(!text || chatBusy) return;
+
+  chatBusy = true;
+  document.getElementById('chatSend').disabled = true;
+  document.getElementById('chatError').style.display = 'none';
+  input.value = '';
+  input.style.height = 'auto';
+
+  // hide pills after first message
+  document.getElementById('chatPills').style.display = 'none';
+
+  addChatMsg('user', text);
+  chatHistory.push({role:'user', content:text});
+  addThinking();
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'anthropic-dangerous-direct-browser-calls':'true'
+      },
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system: CHAT_SYSTEM,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    removeThinking();
+    if(data.error) throw new Error(data.error.message);
+    const reply = data.content.map(b=>b.text||'').join('');
+    chatHistory.push({role:'assistant', content:reply});
+    addChatMsg('assistant', reply);
+  } catch(err) {
+    removeThinking();
+    const errEl = document.getElementById('chatError');
+    errEl.textContent = '오류: ' + err.message;
+    errEl.style.display = 'block';
+  }
+
+  chatBusy = false;
+  document.getElementById('chatSend').disabled = false;
+  input.focus();
+}
+
+function quickChat(btn){
+  document.getElementById('chatInput').value = btn.textContent;
+  sendChat();
+}
+
+// textarea auto-resize
+const chatInput = document.getElementById('chatInput');
+chatInput.addEventListener('input', function(){
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+});
+chatInput.addEventListener('keydown', function(e){
+  if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendChat(); }
+});
+</script>
+</body>
+</html>
