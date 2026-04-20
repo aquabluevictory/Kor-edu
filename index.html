@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -910,7 +909,6 @@ footer::before{
     <li><a href="#success">합격 실적</a></li>
     <li><a href="#programs">프로그램</a></li>
     <li><a href="#strategy">전략 로드맵</a></li>
-    <li><a href="#ai">AI 상담</a></li>
   </ul>
   <a href="tel:010-8318-1700" class="n-btn">📞 전화 상담</a>
 </nav>
@@ -951,7 +949,6 @@ footer::before{
     </p>
     <div class="h-btns">
       <a href="tel:010-8318-1700" class="btn btn-red">📞 전화 상담</a>
-      <a href="#ai" class="btn btn-ghost">AI 입시 상담 <span class="arr">→</span></a>
     </div>
     <div class="h-stats">
       <div>
@@ -1207,36 +1204,6 @@ footer::before{
   </div>
 </div>
 
-<!-- ════ AI CHAT ════ -->
-<div id="ai" class="chat-section">
-  <div style="max-width:1100px;margin:0 auto">
-    <div class="s-label lc-blue rv" style="justify-content:center;text-align:center;display:flex">AI 입시 전문 상담</div>
-    <h2 class="s-h2 rv" style="text-align:center;margin-bottom:12px">국어 · 생기부<br><em>AI에게 질문하세요</em></h2>
-    <p class="s-lead rv" style="text-align:center;max-width:560px;margin:0 auto clamp(32px,4vw,56px)">입시 전략, 수능 국어 대비, 생기부 세특 설계까지 — 전문 AI가 실시간으로 답변합니다.</p>
-    <div class="chat-outer rv">
-      <div class="chat-topbar">
-        <div class="chat-topbar-title">입시 전략 AI · 국어·생기부 전문 분석가</div>
-        <div class="chat-live-dot"></div>
-      </div>
-      <div class="chat-msgs-wrap" id="chatMsgs">
-        <div class="chat-bubble ai">안녕하세요! 국어 × 생기부 전략 AI 상담가입니다. 🌸<br>국어 성적 향상 전략, 생기부 세특 설계, 수능 1등급 달성법, 의대·SKY 입시 전략 등 무엇이든 질문하세요.</div>
-      </div>
-      <div class="chat-pills" id="chatPills">
-        <button class="chat-pill" onclick="quickChat(this)">수능 국어 1등급 전략</button>
-        <button class="chat-pill" onclick="quickChat(this)">0.1% 생기부 세특 방법</button>
-        <button class="chat-pill" onclick="quickChat(this)">의대 입시 국어 대비법</button>
-        <button class="chat-pill" onclick="quickChat(this)">비문학 독해 메커니즘</button>
-        <button class="chat-pill" onclick="quickChat(this)">세특 전공 연계 방법</button>
-        <button class="chat-pill" onclick="quickChat(this)">삼성전자 취업 대비 생기부</button>
-      </div>
-      <div id="chatError" class="chat-error" style="display:none"></div>
-      <div class="chat-input-wrap">
-        <textarea class="chat-textarea" id="chatInput" rows="1" placeholder="국어·생기부·입시 전략에 대해 무엇이든 질문하세요…"></textarea>
-        <button class="chat-send" id="chatSend" onclick="sendChat()">↑</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ════ TESTIMONIAL ════ -->
 <div class="testi-band">
@@ -1273,7 +1240,6 @@ footer::before{
         <li><a href="#success">합격 실적</a></li>
         <li><a href="#programs">프로그램</a></li>
         <li><a href="#strategy">전략 로드맵</a></li>
-        <li><a href="#ai">AI 상담</a></li>
       </ul>
       <p class="foot-copy rv">
         © 2026 국어 × 생기부 입시 전략 시스템<br>
@@ -1409,126 +1375,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-/* ─────────────────────────────
-   8. AI CHAT
-   Fixed: added anthropic-dangerous-direct-browser-calls header
-───────────────────────────────*/
-const CHAT_SYSTEM = `당신은 "국어 × 생기부 입시 전략 전문 AI 상담가"입니다.
-
-[서비스 핵심]
-- 상위권 국어 과외 + 0.1% 생기부(세특) 관리 전문
-- SKY·의치한수 합격 설계
-- 수업 전 무료 미팅으로 국어 성적 및 전과목 석차 상승 가능성 확인
-- 모의고사 예상 석차 성적표·분석 자료를 모의고사 후 즉시 발급 (2주 이상 빠른 분석)
-
-[5가지 핵심 가치]
-1. 입시의 키(Key): 국어 수능 1등급 = 불수능에도 흔들림 없는 독해 메커니즘 체득
-2. 학종 초격차: 0.1% 생기부 - 교수님이 "이 학생이 찾는 인재"라고 느낄 독보적 세특
-3. 학습 효율: 약점 타겟팅 → 국어 시간 절약 → 수학/과학 투자 여력 확보
-4. 문해력·논리력: 논술·면접까지 이어지는 고차원 읽기·쓰기 능력
-5. 멘탈 케어: 0.1% 데이터 기반 피드백, 불안감 해소 페이스메이커
-
-[입시 현황 데이터 - 2026년]
-- 수능 화법작문 1등급컷: 81점 (2026년 3월 학평)
-- EBS 연계율: 53.3% (독서 4지문 전체)
-- 의대 열기 지속 + 삼성전자·SK하이닉스 취업 최선호 기업 부상
-- 세특: 단순 나열 → 가설-탐구-결론-확장 논리 서사가 핵심
-- 킬러 배제 이후 변별: 정보 밀도 + 완독 능력으로 이동
-
-한국어로 답변. 구체적이고 실용적으로. 따뜻하고 전문적인 톤. 500자 이내. 이모지 적절히 활용.`;
-
-let chatHistory = [];
-let chatBusy = false;
-
-function addChatMsg(role, text){
-  const wrap = document.getElementById('chatMsgs');
-  const div = document.createElement('div');
-  div.className = 'chat-bubble ' + (role==='user'?'user':'ai');
-  div.textContent = text;
-  wrap.appendChild(div);
-  wrap.scrollTop = wrap.scrollHeight;
-  return div;
-}
-
-function addThinking(){
-  const wrap = document.getElementById('chatMsgs');
-  const div = document.createElement('div');
-  div.className = 'chat-bubble ai';
-  div.innerHTML = '<div class="chat-thinking"><span></span><span></span><span></span></div>';
-  div.id = 'thinkBubble';
-  wrap.appendChild(div);
-  wrap.scrollTop = wrap.scrollHeight;
-}
-
-function removeThinking(){
-  const el = document.getElementById('thinkBubble');
-  if(el) el.remove();
-}
-
-async function sendChat(){
-  const input = document.getElementById('chatInput');
-  const text = input.value.trim();
-  if(!text || chatBusy) return;
-
-  chatBusy = true;
-  document.getElementById('chatSend').disabled = true;
-  document.getElementById('chatError').style.display = 'none';
-  input.value = '';
-  input.style.height = 'auto';
-
-  // hide pills after first message
-  document.getElementById('chatPills').style.display = 'none';
-
-  addChatMsg('user', text);
-  chatHistory.push({role:'user', content:text});
-  addThinking();
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'anthropic-dangerous-direct-browser-calls':'true'
-      },
-      body: JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        system: CHAT_SYSTEM,
-        messages: chatHistory
-      })
-    });
-    const data = await res.json();
-    removeThinking();
-    if(data.error) throw new Error(data.error.message);
-    const reply = data.content.map(b=>b.text||'').join('');
-    chatHistory.push({role:'assistant', content:reply});
-    addChatMsg('assistant', reply);
-  } catch(err) {
-    removeThinking();
-    const errEl = document.getElementById('chatError');
-    errEl.textContent = '오류: ' + err.message;
-    errEl.style.display = 'block';
-  }
-
-  chatBusy = false;
-  document.getElementById('chatSend').disabled = false;
-  input.focus();
-}
-
-function quickChat(btn){
-  document.getElementById('chatInput').value = btn.textContent;
-  sendChat();
-}
-
-// textarea auto-resize
-const chatInput = document.getElementById('chatInput');
-chatInput.addEventListener('input', function(){
-  this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 120) + 'px';
-});
-chatInput.addEventListener('keydown', function(e){
-  if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); sendChat(); }
-});
 </script>
 </body>
 </html>
